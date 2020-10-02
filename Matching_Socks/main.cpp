@@ -6,8 +6,22 @@ vector<string> split_string(string);
 
 // Complete the sockMerchant function below.
 int sockMerchant(int n, vector<int> ar) {
-
-
+    int pairs = 0;
+    // use a map to find unique values and increment socks with the value
+    std::unordered_map<int, int> map;
+    
+    // this is auto iterate over the vector and if there's a pair, it will increment pairs 
+    for ( auto x : ar)
+    {
+        map[x]++;
+        if(map[x] % 2 == 0 && map[x] != 0 )
+        {
+            pairs++;
+        }
+    }
+    // Printing the output to the terminal.
+    cout << "pairs: " << pairs << endl;
+    return pairs;
 }
 
 int main()
